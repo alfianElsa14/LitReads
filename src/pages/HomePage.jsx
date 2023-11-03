@@ -21,8 +21,6 @@ function HomePage(){
         }catch(error){
             console.error("Error fetching data:", error);
         }
-        // const response = await axios.get('http://localhost:5000/books');
-        // setBooks(response.data);
     };
 
    
@@ -51,21 +49,6 @@ function HomePage(){
                 <AddIcon />
             </Fab>
         </React.Fragment>
-        
-        // <div>
-        // <h1>Book List</h1>
-        // {books.map(book => (
-        //     <div key={book.id}>
-        //     <h2>{book.title}</h2>
-        //     <p>{book.description}</p>
-        //     <p>{book.category}</p>
-        //     <img src={book.image || "https://source.unsplash.com/random?signin"} alt="Book Cover" />
-        //     <p>Favorite: {book.favorite ? 'Yes' : 'No'}</p>
-        //     <button onClick={() => likeBook(book.id)}>Like</button>
-        //     </div>
-        // ))}
-      
-        // </div>
     )
 }
 

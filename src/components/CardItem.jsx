@@ -2,22 +2,19 @@ import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
 import Classes from "../styles/styles.module.scss";
 import axios from "axios";
 import { likeBooks } from "../domain/api";
+import { useNavigate } from "react-router";
 
 const CardItem = ({getBooks, image, title, id, favorite}) => {
+    const navigate = useNavigate()
     const onLikeBookHandler = async (id, currentFavorite) => {
-        // await axios.patch(`http://localhost:5000/books/${id}`, {
-        //     favorite: !currentFavorite
-        // });
-        // alert("test")
         try{
             await likeBooks(id, currentFavorite)
-            getBooks(); // to refresh the book list
+            getBooks();
         }catch(error){
             alert("mampus error")
         }
         
     };
-    // console.log(image)
     return(
         <Grid item xs={3}>
             <Card elevation={5} sx={{ maxWidth: 345 }}>
@@ -38,7 +35,7 @@ const CardItem = ({getBooks, image, title, id, favorite}) => {
                 <Box sx={{
                     display: "flex"
                 }}>
-                    <Button size="small">Detail</Button>
+                    <Button onClick={() => navigate(`/detail/${id}`)} size="small">Detail</Button>
                         <Button size="small" onClick={() => onLikeBookHandler(id, favorite)}>{favorite ? 'Unlike' : 'Like'}</Button>
                     </Box>
                 </Card>
