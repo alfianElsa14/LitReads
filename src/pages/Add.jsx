@@ -4,7 +4,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 
-const App = () => {
+const Add = () => {
     const [bookData, setBookData] = useState({
         title: '',
         description: '',
@@ -53,7 +53,7 @@ const App = () => {
           </Link>
           <form onSubmit={handleSubmit}>
             <div className={styleAdd.inputItem}>
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">Book Title</label>
               <input
                 type="text"
                 id="title"
@@ -95,4 +95,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Add;

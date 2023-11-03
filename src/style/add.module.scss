@@ -1,5 +1,8 @@
 .container {
     padding: 20px;
+    // background-image: url(https://images.unsplash.com/photo-1527176930608-09cb256ab504?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJvb2t8ZW58MHx8MHx8fDA%3D);
+    // background-repeat: no-repeat;
+    // background-size: cover;
 
     h1 {
         text-align: center;
@@ -16,14 +19,15 @@
 
     form {
         width: 550px;
-        border: 1px solid red;
+        border: 8px solid gray;
         padding: 1rem;
-        border-radius: 5px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-left: 330px;
+        // background: linear-gradient(45deg, rgb(222, 55, 13), #1d092d);
 
         .inputItem {
             padding: 10px;
@@ -35,6 +39,7 @@
                 width: 300px;
                 border: 1px solid red;
                 font-size: 18px;
+                font-weight: 600;
             }
             
             .select {
@@ -47,11 +52,13 @@
                 padding: 10px;
                 width: 93%;
                 font-size: 18px;
+                background-color: rgba(255, 255, 255, 0.5);
             }
 
             textarea {
                 font-size: 16px;
                 font-family: Arial, Helvetica, sans-serif;
+                background-color: rgba(255, 255, 255, 0.5);
             }
         }
 
@@ -61,11 +68,98 @@
             padding: 8px 16px;
             margin-bottom: 30px;
             margin-right: 8rem;
-            background-color: green;
+            background-color: rgb(72, 196, 72);
             border-radius: 5px;
             width: 20%;
             cursor: pointer;
         }
+
+        .addAccount:hover {
+            background-color: green;
+        }
         
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding: 5px;
+    
+        h1 {
+            text-align: center;
+        }
+        
+        .back {
+            padding: 8px 16px;
+            margin-bottom: 30px;
+            background-color: rgb(204, 211, 214);
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 0px;
+        }
+    
+        form {
+            width: 90%;
+            border: 4px solid gray;
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0px;
+            // background: linear-gradient(45deg, rgb(222, 55, 13), #1d092d);
+    
+            .inputItem {
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                
+                label {
+                    display: inline-block;
+                    width: 300px;
+                    // border: 1px solid red;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                
+                .select {
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 18px;
+                }
+    
+                input{
+                    padding: 10px;
+                    width: 93%;
+                    font-size: 18px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+    
+                textarea {
+                    font-size: 16px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+    
+            .addAccount {
+                align-self: flex-end;
+                margin-top: 40px;
+                padding: 8px 16px;
+                margin-bottom: 0px;
+                margin-right: 0rem;
+                background-color: rgb(72, 196, 72);
+                border-radius: 5px;
+
+                width: 50%;
+                cursor: pointer;
+            }
+    
+            .addAccount:hover {
+                background-color: green;
+            }
+            
+        }
     }
 }
