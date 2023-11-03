@@ -1,15 +1,23 @@
 import { Box, Button, Card, CardMedia, Grid, Typography } from "@mui/material";
 import Classes from "../styles/styles.module.scss";
 import axios from "axios";
+import { likeBooks } from "../domain/api";
 
 const CardItem = ({getBooks, image, title, id, favorite}) => {
     const onLikeBookHandler = async (id, currentFavorite) => {
-        await axios.patch(`http://localhost:5000/books/${id}`, {
-            favorite: !currentFavorite
-        });
-        getBooks(); // to refresh the book list
+        // await axios.patch(`http://localhost:5000/books/${id}`, {
+        //     favorite: !currentFavorite
+        // });
+        // alert("test")
+        try{
+            await likeBooks(id, currentFavorite)
+            getBooks(); // to refresh the book list
+        }catch(error){
+            alert("mampus error")
+        }
+        
     };
-    console.log(image)
+    // console.log(image)
     return(
         <Grid item xs={3}>
             <Card elevation={5} sx={{ maxWidth: 345 }}>

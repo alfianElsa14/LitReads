@@ -21,8 +21,8 @@ function HomePage(){
         }catch(error){
             console.error("Error fetching data:", error);
         }
-        const response = await axios.get('http://localhost:5000/books');
-        setBooks(response.data);
+        // const response = await axios.get('http://localhost:5000/books');
+        // setBooks(response.data);
     };
 
    
