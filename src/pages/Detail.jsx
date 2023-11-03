@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import style from '../style/details.module.scss'
 import axios from 'axios'
+import { useNavigate, useParams } from 'react-router'
 
 
 function Detail() {
     const [detailBook, setDetailBook] = useState()
+    const { id } = useParams()
+    const navigation = useNavigate()
 
     async function fetchBookById() {
         try {
-            const response = await axios.get(`http://localhost:3000/books/1`)
+            const response = await axios.get(`http://localhost:3000/books/${id}`)
+            console.log(response);
             setDetailBook(response.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    async function deleteBookById(id) {
+        try {
+            const confirmed = window.confirm('Apakah Anda yakin ingin menghapus akun ini?');
+
+            if (!confirmed) {
+                return;
+            }
+            const deleteBook = await axios.delete(`http://localhost:3000/books/${id}`)
+            navigation("/")
         } catch (error) {
             console.log(error);
         }
@@ -28,9 +47,8 @@ function Detail() {
                     <p>Title: {detailBook?.title}</p>
                     <p>Description: {detailBook?.description}</p>
                     <p>Category: {detailBook?.category}</p>
-                    <p>Favorites: {detailBook?.favorite}</p>
                     <button>Edit</button>
-                    <button>delete</button>
+                    <button onClick={() => {deleteBookById(detailBook?.id)}}>delete</button>
                 </div>
             </div>
         </div>
