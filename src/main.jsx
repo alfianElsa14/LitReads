@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Detail from './pages/Detail.jsx';
+import Add from './pages/Add.jsx';
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     path: "/detail",
     element: <Detail />,
   },
+  {
+    path: "/add",
+    element: <Add />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
