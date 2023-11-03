@@ -50,7 +50,7 @@ const Navigation = () => {
               textDecoration: 'none',
             }}
           >
-            LitReads
+           <Link className={Classes.linklogo} to={'/'}>LitReads</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -84,7 +84,7 @@ const Navigation = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography variant="body1" textAlign="center">{page}</Typography>
+                <Link className={Classes.link} to={'/favorites'}>{page}</Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -106,7 +106,7 @@ const Navigation = () => {
               textDecoration: 'none',
             }}
           >
-            LitReads
+            <Link className={Classes.linklogo} to={'/'}>LitReads</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

@@ -11,7 +11,7 @@ function Detail() {
 
     async function fetchBookById() {
         try {
-            const response = await axios.get(`http://localhost:3000/books/${id}`)
+            const response = await axios.get(`http://localhost:5000/books/${id}`)
             console.log(response);
             setDetailBook(response.data)
         } catch (error) {
@@ -27,7 +27,7 @@ function Detail() {
             if (!confirmed) {
                 return;
             }
-            const deleteBook = await axios.delete(`http://localhost:3000/books/${id}`)
+            const deleteBook = await axios.delete(`http://localhost:5000/books/${id}`)
             navigation("/")
         } catch (error) {
             console.log(error);

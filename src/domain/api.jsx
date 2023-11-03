@@ -1,9 +1,14 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:3000/books'
+const BASE_URL = 'http://localhost:5000/books'
 
 export const getAllBooks = async () => {
-    const response = await axios.get(BASE_URL)
+    const response = await axios.get(`${BASE_URL}?favorite=false`)
+    return response.data
+}
+
+export const getAllFavorites = async () => {
+    const response = await axios.get(`${BASE_URL}?favorite=true`)
     return response.data
 }
 

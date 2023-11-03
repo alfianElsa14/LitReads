@@ -16,8 +16,8 @@ const CardItem = ({getBooks, image, title, id, favorite}) => {
         
     };
     return(
-        <Grid item xs={3}>
-            <Card elevation={5} sx={{ maxWidth: 345 }}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Card elevation={5} sx={{ maxWidth: '100%', marginTop: 2 }}>
                 <CardMedia
                         sx={{ height: 140 }}
                         image={image}

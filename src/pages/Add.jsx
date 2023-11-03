@@ -1,10 +1,11 @@
 import styleAdd from '../style/add.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
 
 const Add = () => {
+  const navigate = useNavigate()
     const [bookData, setBookData] = useState({
         title: '',
         description: '',
@@ -27,15 +28,16 @@ const Add = () => {
         }
 
         try {
-            const bookCheckResponse = await axios.get(`http://localhost:3000/books?title=${bookData.title}`);
+            const bookCheckResponse = await axios.get(`http://localhost:5000/books?title=${bookData.title}`);
       
             if (bookCheckResponse.data.length > 0) {
               alert('Buku sudah terdaftar');
               return;
             }
-            const response = await axios.post('http://localhost:3000/books', bookData);
+            const response = await axios.post('http://localhost:5000/books', bookData);
             if (response.status === 201) {
               alert('Berhasil menambah data');
+              navigate('/')
             } else {
               console.error('Gagal menambahkan buku');
             }
