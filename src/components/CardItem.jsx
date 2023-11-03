@@ -11,7 +11,7 @@ const CardItem = ({getBooks, image, title, id, favorite}) => {
             await likeBooks(id, currentFavorite)
             getBooks();
         }catch(error){
-            alert("mampus error")
+            alert("error")
         }
         
     };
