@@ -1,0 +1,22 @@
+.containerDetail {
+    //    background-color: aqua;
+
+    h1 {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        img {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+
+}
