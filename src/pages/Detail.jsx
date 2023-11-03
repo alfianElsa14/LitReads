@@ -44,11 +44,12 @@ function Detail() {
             <div className={style.content}>
                 <img src={detailBook?.image} alt="" />
                 <div className={style.desricption}>
-                    <p>Title: {detailBook?.title}</p>
-                    <p>Description: {detailBook?.description}</p>
-                    <p>Category: {detailBook?.category}</p>
-                    <button>Edit</button>
-                    <button onClick={() => {deleteBookById(detailBook?.id)}}>delete</button>
+                    <h1>{detailBook?.title}</h1>
+                    <p><strong>Description: </strong> {detailBook?.description}</p>
+                    <br />
+                    <p><strong>Category: </strong> {detailBook?.category}</p>
+                    <button onClick={() => navigation(`/edit/${detailBook?.id}`)}>Edit</button>
+                    <button onClick={() => {deleteBookById(detailBook?.id)}}>Delete</button>
                 </div>
             </div>
         </div>
